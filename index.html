@@ -8,15 +8,14 @@
     <meta name="description" content="FB Informática: Armado de PC Gamers a medida, venta de GPUs nuevas y usadas con garantía. Desarrollo web profesional. Retiros en Rivera y Montevideo.">
     <meta name="keywords" content="PC Gamer Uruguay, Hardware Rivera, Tarjetas de Video Usadas, Desarrollo Web Uruguay, FB Informática, Armado de PC">
     <meta name="author" content="FB Informática">
-    
     <meta property="og:title" content="FB Informática | Tu Setup Gamer al mejor precio">
     <meta property="og:description" content="Venta de hardware nuevo y usado con garantía. Desarrollo de sitios web.">
     <meta property="og:image" content="img/logo.jpg">
-
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -31,26 +30,55 @@
             <li><a href="#contacto">Contacto</a></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
     <header id="inicio" class="hero">
         <img src="img/banner.jpg" alt="Banner Principal" class="hero-bg">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up">
             <h1>Soluciones Tecnológicas Integrales</h1>
             <p>Armado de PC Gamers • Venta de Hardware • Desarrollo Web</p>
             <a href="#contacto" class="btn">Cotizar Ahora</a>
         </div>
     </header>
 
-    <section id="hardware" class="container">
-        <h2 class="section-title">Venta y Armado de Hardware</h2>
-        <p class="section-subtitle">Retiros en Rivera y Montevideo</p>
+    <section class="features-strip bg-dark">
+        <div class="features-container">
+            <div class="feature-box" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-desktop"></i>
+                <h3>PC Gamer</h3>
+                <p>Armados a medida</p>
+            </div>
+            <div class="feature-box" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Performance</h3>
+                <p>Máximo rendimiento</p>
+            </div>
+            <div class="feature-box" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Garantía Real</h3>
+                <p>Respaldo total</p>
+            </div>
+            <div class="feature-box" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-code"></i>
+                <h3>Web Dev</h3>
+                <p>Sitios profesionales</p>
+            </div>
+             <div class="feature-box" data-aos="zoom-in" data-aos-delay="500">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Envíos</h3>
+                <p>A todo el país</p>
+            </div>
+        </div>
+    </section>
 
-        <div class="category">
+
+    <section id="hardware" class="container">
+        <h2 class="section-title" data-aos="fade-up">Venta y Armado de Hardware</h2>
+        <p class="section-subtitle" data-aos="fade-up">Retiros en Rivera y Montevideo</p>
+
+        <div class="category" data-aos="fade-up">
             <h3>🖥️ PC Gamers a Medida</h3>
             <div class="guarantee-badge">
                 <span>Nuevas: 1 Año Garantía</span> | <span>Usadas: 3 Meses Garantía</span>
@@ -67,7 +95,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" data-aos="fade-up">
             <h3>🎮 Tarjetas Gráficas (GPU)</h3>
             <div class="guarantee-badge">
                 <span>Nuevas: 1 Año Garantía</span> | <span>Usadas: 30 días a 3 Meses Garantía</span>
@@ -85,52 +113,46 @@
         </div>
     </section>
 
-    <section class="container" style="padding-top: 0;">
+    <section class="container" style="padding-top: 0;" data-aos="fade-up">
         <h2 class="section-title">Preguntas Frecuentes</h2>
         <div class="faq-container">
-            
             <details class="faq-item">
                 <summary>¿Qué garantía tienen los equipos?</summary>
                 <p>Para equipos y piezas <strong>NUEVAS</strong> ofrecemos 1 año de garantía escrita. Para hardware <strong>USADO</strong>, brindamos 3 meses de garantía total y de 30 días a 3 meses para GPUs usadas (según modelo).</p>
             </details>
-    
             <details class="faq-item">
                 <summary>¿Hacen envíos a todo el país?</summary>
                 <p>Sí, realizamos envíos a todo el Uruguay por la agencia de tu preferencia. También contamos con retiro presencial en <strong>Rivera</strong> y <strong>Montevideo</strong>.</p>
             </details>
-    
             <details class="faq-item">
                 <summary>¿Aceptan hardware como parte de pago?</summary>
                 <p>Evaluamos tu hardware usado caso por caso para descontar del precio final de tu nueva PC Gamer. ¡Consúltanos al WhatsApp!</p>
             </details>
-    
         </div>
     </section>
 
     <section id="webdev" class="bg-dark">
         <div class="container">
-            <h2 class="section-title text-white">Mis Proyectos Web</h2>
-            <p class="text-white center-text">Desarrollo de sitios a medida, e-commerce y landing pages.</p>
+            <h2 class="section-title text-white" data-aos="fade-up">Mis Proyectos Web</h2>
+            <p class="text-white center-text" data-aos="fade-up">Desarrollo de sitios a medida, e-commerce y landing pages.</p>
             
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="img/web_churchil.jpg" alt="Proyecto Churchil">
+                <div class="portfolio-item" data-aos="zoom-in">
+                    <div class="img-overflow"><img src="img/web_churchil.jpg" alt="Proyecto Churchil"></div>
                     <div class="portfolio-info">
                         <h4>Proyecto Churchil</h4>
                         <p>Desarrollo Web Full Stack</p>
                     </div>
                 </div>
-
-                <div class="portfolio-item">
-                    <img src="img/web_giovani.jpg" alt="Proyecto DJ Giovani">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="img-overflow"><img src="img/web_giovani.jpg" alt="Proyecto DJ Giovani"></div>
                     <div class="portfolio-info">
                         <h4>DJ Giovani</h4>
                         <p>Sitio Web Personal & Booking</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item">
-                    <img src="img/slide001.jpg" alt="FB Informática Web">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="img-overflow"><img src="img/slide001.jpg" alt="FB Informática Web"></div>
                     <div class="portfolio-info">
                         <h4>FB Informática</h4>
                         <p>E-commerce y Servicios IT</p>
@@ -141,10 +163,9 @@
     </section>
 
     <footer id="contacto">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <h2 class="section-title text-white">Contáctanos</h2>
             <div class="contact-wrapper">
-                
                 <div class="contact-info-box">
                     <h3>Información</h3>
                     <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/59892236811" target="_blank">092 236 811</a></p>
@@ -154,24 +175,16 @@
                         <a href="https://facebook.com/fbinformatica2020" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
-
                 <div class="contact-form-box">
                     <h3>Envíame un mensaje</h3>
                     <form action="https://formspree.io/f/mojewlbe" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Tu Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="mensaje" rows="4" placeholder="Consulta sobre PC, GPU o Web..." required></textarea>
-                        </div>
+                        <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Tu Email" required></div>
+                        <div class="form-group"><textarea name="mensaje" rows="4" placeholder="Consulta sobre PC, GPU o Web..." required></textarea></div>
                         <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 FB Informática. Desarrollado por FB Informática.</p>
             </div>
@@ -182,6 +195,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
