@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB Informática | Hardware & Desarrollo Web</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="FB Informática Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#hardware">Hardware</a></li>
+            <li><a href="#webdev">Desarrollo Web</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <img src="img/banner.jpg" alt="Banner Principal" class="hero-bg">
+        <div class="hero-content">
+            <h1>Soluciones Tecnológicas Integrales</h1>
+            <p>Armado de PC Gamers • Venta de Hardware • Desarrollo Web</p>
+            <a href="#contacto" class="btn">Cotizar Ahora</a>
+        </div>
+    </header>
+
+    <section id="hardware" class="container">
+        <h2 class="section-title">Venta y Armado de Hardware</h2>
+        <p class="section-subtitle">Retiros en Rivera y Montevideo</p>
+
+        <div class="category">
+            <h3>🖥️ PC Gamers a Medida</h3>
+            <div class="guarantee-badge">
+                <span>Nuevas: 1 Año Garantía</span> | <span>Usadas: 3 Meses Garantía</span>
+            </div>
+            
+            <div class="slider-container">
+                <button class="prev" onclick="moveSlide('pc-slider', -1)">&#10094;</button>
+                <div class="slider" id="pc-slider">
+                    <div class="slide"><img src="img/pcnueva001.jpg" alt="PC Gamer Nueva"><p>PC Nuevas - Alto Rendimiento</p></div>
+                    <div class="slide"><img src="img/pcusada001.jpg" alt="PC Gamer Usada"><p>PC Usadas - Revisadas y Garantidas</p></div>
+                    <div class="slide"><img src="img/pcnueva002.jpg" alt="PC Gamer Custom"><p>Armados a medida</p></div>
+                </div>
+                <button class="next" onclick="moveSlide('pc-slider', 1)">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>🎮 Tarjetas Gráficas (GPU)</h3>
+            <div class="guarantee-badge">
+                <span>Nuevas: 1 Año Garantía</span> | <span>Usadas: 30 días a 3 Meses Garantía</span>
+            </div>
+
+            <div class="slider-container">
+                <button class="prev" onclick="moveSlide('gpu-slider', -1)">&#10094;</button>
+                <div class="slider" id="gpu-slider">
+                    <div class="slide"><img src="img/gnueva001.jpg" alt="GPU Nueva"><p>GPUs Nuevas en Caja</p></div>
+                    <div class="slide"><img src="img/gusada001.jpg" alt="GPU Usada"><p>GPUs Usadas Seleccionadas</p></div>
+                    <div class="slide"><img src="img/gnueva002.jpg" alt="GPU Stock"><p>Stock actualizado</p></div>
+                </div>
+                <button class="next" onclick="moveSlide('gpu-slider', 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="webdev" class="bg-dark">
+        <div class="container">
+            <h2 class="section-title text-white">Mis Proyectos Web</h2>
+            <p class="text-white center-text">Desarrollo de sitios a medida, e-commerce y landing pages.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="img/web_churchil.jpg" alt="Proyecto Churchil">
+                    <div class="portfolio-info">
+                        <h4>Proyecto Churchil</h4>
+                        <p>Desarrollo Web Full Stack</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="img/web_giovani.jpg" alt="Proyecto DJ Giovani">
+                    <div class="portfolio-info">
+                        <h4>DJ Giovani</h4>
+                        <p>Sitio Web Personal & Booking</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="img/slide001.jpg" alt="FB Informática Web">
+                    <div class="portfolio-info">
+                        <h4>FB Informática</h4>
+                        <p>E-commerce y Servicios IT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <h2 class="section-title text-white">Contáctanos</h2>
+            <div class="contact-wrapper">
+                
+                <div class="contact-info-box">
+                    <h3>Información</h3>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/59892236811" target="_blank">092 236 811</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Retiros en: <strong>Rivera</strong> y <strong>Montevideo</strong></p>
+                    <div class="social-links-footer">
+                        <a href="https://instagram.com/fbinformaticauy" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/fbinformatica2020" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <h3>Envíame un mensaje</h3>
+                    <form action="https://formspree.io/f/mojewlbe" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Tu Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="mensaje" rows="4" placeholder="Consulta sobre PC, GPU o Web..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 FB Informática. Desarrollado por FB Informática.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
