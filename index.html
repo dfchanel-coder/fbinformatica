@@ -3,175 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FB Informática | PC Gamers, Hardware & Web</title>
+    <title>FB Informática | Soluciones Tecnológicas</title>
     
-    <meta name="description" content="FB Informática: Armado de PC Gamers a medida, venta de GPUs nuevas y usadas con garantía. Desarrollo web profesional. Retiros en Rivera y Montevideo.">
-    <meta name="keywords" content="PC Gamer Uruguay, Hardware Rivera, Tarjetas de Video Usadas, Desarrollo Web Uruguay, FB Informática, Armado de PC">
+    <meta name="description" content="FB Informática: Expertos en armado de PC Gamers, Hardware y Desarrollo Web Profesional en Uruguay.">
     <meta name="author" content="FB Informática">
-    <meta property="og:title" content="FB Informática | Tu Setup Gamer al mejor precio">
-    <meta property="og:description" content="Venta de hardware nuevo y usado con garantía. Desarrollo de sitios web.">
+    <meta property="og:title" content="FB Informática | Tu Partner Tecnológico">
     <meta property="og:image" content="img/logo.jpg">
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Reset y Fuentes */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f4f4; color: #333; overflow-x: hidden; }
+        /* =========================================
+           1. RESET Y TIPOGRAFÍA GLOBAL
+           ========================================= */
+        :root {
+            --primary: #007bff;
+            --primary-gradient: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #f4f4f4;
+            --text-muted: #a0a0a0;
+            --whatsapp: #25d366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--dark-bg); /* Fondo oscuro general para look gamer/dev */
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif; /* Fuente Premium */
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Arreglo de fuentes en inputs y botones */
+        input, button, textarea, select {
+            font-family: 'Poppins', sans-serif;
+        }
+
         html { scroll-behavior: smooth; }
 
-        /* Variables de Color */
-        :root {
-            --primary: #007bff; /* Azul Tech */
-            --primary-dark: #0056b3;
-            --dark: #1a1a1a;
-            --darker: #111;
-            --light: #f4f4f4;
-            --accent: #ff4757;
-            --whatsapp-green: #25d366;
-        }
-
-        /* Navbar */
+        /* =========================================
+           2. NAVEGACIÓN (NAVBAR)
+           ========================================= */
         .navbar {
             display: flex; justify-content: space-between; align-items: center;
-            background: var(--dark); padding: 1rem 5%; position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            background: rgba(18, 18, 18, 0.95); /* Semi transparente */
+            padding: 1rem 5%; position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid #333;
+            backdrop-filter: blur(10px);
         }
-        .logo img { height: 50px; border-radius: 50%; }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li a { color: white; text-decoration: none; padding: 0 15px; font-weight: bold; transition: color 0.3s; position: relative; }
+        .logo img { height: 50px; border-radius: 50%; border: 2px solid var(--primary); }
+        
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links li a { 
+            color: white; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+            position: relative; transition: color 0.3s;
+        }
+        .nav-links li a:hover { color: var(--primary); }
         .nav-links li a::after {
-            content: ''; display: block; width: 0; height: 2px; background: var(--primary); transition: width 0.3s;
+            content: ''; display: block; width: 0; height: 2px; 
+            background: var(--primary-gradient); transition: width 0.3s; margin-top: 5px;
         }
         .nav-links li a:hover::after { width: 100%; }
-        .menu-toggle { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+        
+        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-        /* Hero Banner */
+        /* =========================================
+           3. HERO SECTION (BANNER)
+           ========================================= */
         .hero {
-            position: relative; height: 85vh; display: flex;
+            position: relative; height: 90vh; display: flex;
             justify-content: center; align-items: center; text-align: center; color: white;
+            overflow: hidden;
         }
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: -1; filter: brightness(0.35);
+            object-fit: cover; z-index: -1; 
+            filter: brightness(0.3); /* Oscurecer imagen para leer texto */
+            transform: scale(1.1); /* Ligero zoom inicial */
         }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content { z-index: 2; padding: 0 20px; }
+        .hero-content h1 { 
+            font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; line-height: 1.2;
+            background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; /* Texto degradado */
+        }
+        .hero-content p { font-size: 1.2rem; color: #ddd; margin-bottom: 2rem; font-weight: 300; }
+        
         .btn {
-            background: var(--primary); color: white; padding: 12px 30px;
-            text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s;
-            display: inline-block; text-transform: uppercase; letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0,123,255,0.4);
+            background: var(--primary-gradient); color: white; padding: 14px 35px;
+            text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;
+            display: inline-block; box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; border: none;
         }
-        .btn:hover { background: var(--primary-dark); transform: translateY(-3px); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 123, 255, 0.5); }
 
-        /* NUEVA SECCIÓN: Cinta de Características (Features Strip) */
-        .features-strip { padding: 2rem 0; border-bottom: 1px solid #333; }
+        /* =========================================
+           4. CINTA DE CARACTERÍSTICAS (FEATURES)
+           ========================================= */
+        .features-strip { padding: 3rem 0; background: #1a1a1a; border-bottom: 1px solid #333; }
         .features-container {
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;
+            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
             max-width: 1200px; margin: auto; padding: 0 5%;
         }
         .feature-box {
-            text-align: center; color: white; padding: 1.5rem; min-width: 180px;
-            border: 1px solid #333; border-radius: 10px; background: rgba(255,255,255,0.05);
+            text-align: center; padding: 2rem; flex: 1; min-width: 160px; max-width: 220px;
+            background: #252525; border-radius: 15px; border: 1px solid #333;
             transition: transform 0.3s, border-color 0.3s;
         }
-        .feature-box:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .feature-box:hover { transform: translateY(-10px); border-color: var(--primary); }
         .feature-box i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .feature-box h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
-        .feature-box p { font-size: 0.9rem; color: #ccc; }
+        .feature-box h3 { font-size: 1.1rem; color: white; margin-bottom: 0.5rem; }
+        .feature-box p { font-size: 0.85rem; color: var(--text-muted); }
 
-
-        /* Secciones Generales */
-        .container { padding: 5rem 5%; max-width: 1200px; margin: auto; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 10px; color: var(--dark); position: relative; display: inline-block; left: 50%; transform: translateX(-50%); }
+        /* =========================================
+           5. SECCIONES GENERALES & SLIDERS
+           ========================================= */
+        .container { padding: 6rem 5%; max-width: 1200px; margin: auto; }
+        
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-title { 
+            font-size: 2.5rem; color: white; margin-bottom: 10px; position: relative; display: inline-block; 
+        }
         .section-title::after {
-            content: ''; display: block; width: 50px; height: 3px; background: var(--primary); margin: 10px auto 0;
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--primary); margin: 15px auto 0; border-radius: 2px;
         }
-        .text-white { color: white !important; }
-        .section-subtitle { text-align: center; color: #666; margin-bottom: 4rem; }
-        .bg-dark { background: var(--dark); }
-        .center-text { text-align: center; margin-bottom: 3rem; }
+        .section-subtitle { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* Badges & Sliders */
+        /* Badges */
         .guarantee-badge {
-            text-align: center; background: #e9ecef; padding: 10px;
-            border-radius: 5px; margin-bottom: 25px; font-weight: bold; color: var(--dark); display: inline-block; left: 50%; position: relative; transform: translateX(-50%);
+            text-align: center; background: rgba(255,255,255,0.1); padding: 10px 20px;
+            border-radius: 30px; margin: 0 auto 30px; font-weight: 500; color: #fff;
+            display: table; border: 1px solid #444; font-size: 0.9rem;
         }
+
+        /* Slider Moderno */
         .slider-container {
-            position: relative; max-width: 850px; margin: auto; overflow: hidden;
-            border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin-bottom: 4rem;
+            position: relative; max-width: 900px; margin: 0 auto 5rem; overflow: hidden;
+            border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        .slider { display: flex; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .slider { display: flex; transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
         .slide { min-width: 100%; position: relative; }
-        .slide img { width: 100%; height: 450px; object-fit: cover; transition: transform 0.5s; }
-        .slide:hover img { transform: scale(1.03); } /* Efecto Zoom sutil en sliders */
-        .slide p {
-            position: absolute; bottom: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
-            color: white; width: 100%; text-align: center; padding: 20px 10px; font-size: 1.1rem;
+        .slide img { width: 100%; height: 500px; object-fit: cover; }
+        .slide-caption {
+            position: absolute; bottom: 0; width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 30px; text-align: center;
         }
-        button.prev, button.next {
+        .slide-caption p { color: white; font-size: 1.2rem; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        
+        .slider-btn {
             position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(0,0,0,0.6); color: white; border: none;
-            padding: 15px; cursor: pointer; z-index: 10; border-radius: 50%; width: 50px; height: 50px; transition: 0.3s;
+            background: rgba(0,0,0,0.5); color: white; border: none;
+            width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.3s; font-size: 1.2rem;
         }
-        button.prev:hover, button.next:hover { background: var(--primary); }
-        button.prev { left: 15px; }
-        button.next { right: 15px; }
+        .slider-btn:hover { background: var(--primary); }
+        .prev { left: 20px; } .next { right: 20px; }
 
-        /* FAQ & Portfolio */
-        .faq-container { max-width: 800px; margin: 0 auto 2rem; }
-        .faq-item { background: white; border-bottom: 1px solid #ddd; margin-bottom: 15px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .faq-item summary { padding: 20px; cursor: pointer; font-weight: bold; background: #f8f9fa; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-        .faq-item summary::after { content: '+'; font-size: 1.5rem; color: var(--primary); }
-        .faq-item[open] summary::after { content: '-'; color: var(--accent); }
-        .faq-item p { padding: 20px; line-height: 1.7; color: #555; }
+        /* =========================================
+           6. FAQ (PREGUNTAS)
+           ========================================= */
+        .faq-container { max-width: 800px; margin: auto; }
+        .faq-item {
+            background: #1e1e1e; border: 1px solid #333; margin-bottom: 15px;
+            border-radius: 10px; overflow: hidden;
+        }
+        .faq-item summary {
+            padding: 20px; cursor: pointer; font-weight: 600; color: white;
+            list-style: none; display: flex; justify-content: space-between; align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-item summary:hover { background: #252525; }
+        .faq-item summary::after { content: '+'; color: var(--primary); font-size: 1.5rem; }
+        .faq-item[open] summary::after { content: '-'; color: #ff4757; }
+        .faq-item p { padding: 20px; color: #ccc; border-top: 1px solid #333; font-size: 0.95rem; }
 
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .portfolio-item { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .portfolio-item:hover { transform: translateY(-5px); }
-        /* Contenedor para el efecto zoom */
-        .img-overflow { overflow: hidden; height: 220px; }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .portfolio-item:hover img { transform: scale(1.1); } /* Zoom potente al hover */
-        .portfolio-info { padding: 20px; text-align: center; }
-        .portfolio-info h4 { color: var(--primary); margin-bottom: 5px; }
+        /* =========================================
+           7. PORTFOLIO WEB
+           ========================================= */
+        .bg-gradient { background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%); }
+        
+        .portfolio-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; 
+        }
+        .portfolio-item { 
+            background: #1e1e1e; border-radius: 15px; overflow: hidden; 
+            border: 1px solid #333; transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .portfolio-item:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,123,255,0.15); border-color: #444; }
+        
+        .img-overflow { height: 250px; overflow: hidden; position: relative; }
+        .portfolio-item img { 
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; 
+        }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        
+        .portfolio-info { padding: 25px; text-align: center; }
+        .portfolio-info h4 { color: white; font-size: 1.3rem; margin-bottom: 5px; }
+        .portfolio-info p { color: var(--primary); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Footer & Contact */
-        footer { background: var(--darker); color: white; padding: 4rem 0 1rem; }
-        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 3rem; }
-        .contact-info-box, .contact-form-box { flex: 1; min-width: 300px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; }
-        .contact-info-box h3, .contact-form-box h3 { color: var(--primary); margin-bottom: 1.5rem; }
-        .social-links-footer a { color: white; font-size: 1.8rem; margin-right: 20px; transition: 0.3s; }
-        .social-links-footer a:hover { color: var(--primary); transform: scale(1.2); }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; background: #333; border: 2px solid transparent; color: white; border-radius: 6px; transition: 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: #444; }
-        .btn-submit { width: 100%; border: none; cursor: pointer; font-size: 1rem; padding: 12px; font-weight: bold; border-radius: 6px; background: var(--primary); color: white; transition: 0.3s; }
-        .btn-submit:hover { background: var(--primary-dark); }
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: var(--whatsapp-green); color: #FFF; border-radius: 50%; text-align: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(15deg); background-color: #1ebe57; }
+        /* =========================================
+           8. FOOTER Y CONTACTO (RENOVADO)
+           ========================================= */
+        footer { background: #0a0a0a; color: white; border-top: 1px solid #222; padding: 5rem 0 2rem; }
+        
+        .contact-wrapper { 
+            display: flex; flex-wrap: wrap; gap: 3rem; margin-top: 2rem; 
+        }
+        .contact-box {
+            flex: 1; min-width: 300px; padding: 40px; border-radius: 20px;
+            background: #151515; border: 1px solid #333;
+        }
+        
+        .contact-box h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .info-line { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; }
+        .info-line i { font-size: 1.4rem; color: var(--primary); width: 30px; }
+        .info-line span, .info-line a { font-size: 1.1rem; color: #ccc; text-decoration: none; }
+        
+        /* Redes Sociales */
+        .social-icons { margin-top: 2rem; }
+        .social-icons a { 
+            display: inline-flex; width: 45px; height: 45px; background: #222; 
+            color: white; border-radius: 50%; align-items: center; justify-content: center;
+            font-size: 1.2rem; margin-right: 15px; transition: 0.3s; text-decoration: none;
+        }
+        .social-icons a:hover { background: var(--primary); transform: translateY(-3px); }
+
+        /* Formulario Pro */
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 15px; 
+            background: #222; border: 1px solid #444; border-radius: 8px;
+            color: white; font-size: 1rem; transition: 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--primary); background: #2a2a2a;
+        }
+        
+        .footer-copy { 
+            text-align: center; margin-top: 4rem; padding-top: 2rem; 
+            border-top: 1px solid #222; color: #666; font-size: 0.9rem; 
+        }
+
+        /* =========================================
+           9. EXTRAS (WHATSAPP & RESPONSIVE)
+           ========================================= */
+        .whatsapp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background-color: var(--whatsapp); color: #FFF; border-radius: 50%;
+            text-align: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000; display: flex; align-items: center; justify-content: center;
+            transition: transform 0.3s; text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
+            .hero-content h1 { font-size: 2.2rem; }
             .nav-links {
-                position: fixed; right: -100%; top: 70px; height: calc(100vh - 70px);
-                background: var(--dark); flex-direction: column; align-items: center;
-                width: 70%; padding-top: 2rem; transition: right 0.4s ease-in-out;
+                position: fixed; right: -100%; top: 73px; height: calc(100vh - 73px);
+                background: #121212; flex-direction: column; width: 80%; padding: 3rem;
+                transition: right 0.4s ease-in-out; border-left: 1px solid #333;
             }
             .nav-links.active { right: 0; }
-            .nav-links li { margin: 1.5rem 0; }
-            .hero-content h1 { font-size: 2.2rem; }
-            /* Cinta de características en móvil: scroll horizontal */
-            .features-container { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 10px; -webkit-overflow-scrolling: touch; }
-            .features-container::-webkit-scrollbar { height: 5px; }
-            .features-container::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-        }
-        
-        /* FIX DE SEGURIDAD: Si falla el JS, muestra todo igual */
-        [data-aos] {
-            pointer-events: auto !important;
+            .menu-toggle { display: block; }
+            .features-container { overflow-x: auto; justify-content: flex-start; padding-bottom: 20px; }
         }
     </style>
 </head>
@@ -179,13 +281,13 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="img/logo.jpg" alt="FB Informática Logo">
+            <img src="img/logo.jpg" alt="FB">
         </div>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#hardware">Hardware</a></li>
-            <li><a href="#webdev">Desarrollo Web</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#hardware">HARDWARE</a></li>
+            <li><a href="#webdev">DESARROLLO WEB</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
             <i class="fas fa-bars"></i>
@@ -193,127 +295,142 @@
     </nav>
 
     <header id="inicio" class="hero">
-        <img src="img/banner.jpg" alt="Banner Principal" class="hero-bg">
+        <img src="img/banner.jpg" alt="Banner" class="hero-bg">
         <div class="hero-content" data-aos="fade-up">
-            <h1>Soluciones Tecnológicas Integrales</h1>
-            <p>Armado de PC Gamers • Venta de Hardware • Desarrollo Web</p>
-            <a href="#contacto" class="btn">Cotizar Ahora</a>
+            <h1>TECNOLOGÍA DE<br>ALTO RENDIMIENTO</h1>
+            <p>Armado de PC Gamers • Hardware • Desarrollo Web Profesional</p>
+            <a href="#contacto" class="btn">Solicitar Cotización</a>
         </div>
     </header>
 
-    <section class="features-strip bg-dark">
+    <section class="features-strip">
         <div class="features-container">
             <div class="feature-box" data-aos="zoom-in" data-aos-delay="100">
                 <i class="fas fa-desktop"></i>
                 <h3>PC Gamer</h3>
-                <p>Armados a medida</p>
+                <p>Builds a medida</p>
             </div>
             <div class="feature-box" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-tachometer-alt"></i>
-                <h3>Performance</h3>
-                <p>Máximo rendimiento</p>
+                <i class="fas fa-microchip"></i>
+                <h3>Hardware</h3>
+                <p>Componentes Top</p>
             </div>
             <div class="feature-box" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Garantía Real</h3>
-                <p>Respaldo total</p>
+                <i class="fas fa-award"></i>
+                <h3>Garantía</h3>
+                <p>Respaldo Real</p>
             </div>
             <div class="feature-box" data-aos="zoom-in" data-aos-delay="400">
                 <i class="fas fa-code"></i>
                 <h3>Web Dev</h3>
-                <p>Sitios profesionales</p>
-            </div>
-             <div class="feature-box" data-aos="zoom-in" data-aos-delay="500">
-                <i class="fas fa-shipping-fast"></i>
-                <h3>Envíos</h3>
-                <p>A todo el país</p>
+                <p>Sitios Modernos</p>
             </div>
         </div>
     </section>
 
-
     <section id="hardware" class="container">
-        <h2 class="section-title" data-aos="fade-up">Venta y Armado de Hardware</h2>
-        <p class="section-subtitle" data-aos="fade-up">Retiros en Rivera y Montevideo</p>
-
-        <div class="category" data-aos="fade-up">
-            <h3>🖥️ PC Gamers a Medida</h3>
-            <div class="guarantee-badge">
-                <span>Nuevas: 1 Año Garantía</span> | <span>Usadas: 3 Meses Garantía</span>
-            </div>
-            
-            <div class="slider-container">
-                <button class="prev" onclick="moveSlide('pc-slider', -1)">&#10094;</button>
-                <div class="slider" id="pc-slider">
-                    <div class="slide"><img src="img/pcnueva001.jpg" alt="PC Gamer Nueva"><p>PC Nuevas - Alto Rendimiento</p></div>
-                    <div class="slide"><img src="img/pcusada001.jpg" alt="PC Gamer Usada"><p>PC Usadas - Revisadas y Garantidas</p></div>
-                    <div class="slide"><img src="img/pcnueva002.jpg" alt="PC Gamer Custom"><p>Armados a medida</p></div>
-                </div>
-                <button class="next" onclick="moveSlide('pc-slider', 1)">&#10095;</button>
-            </div>
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Hardware Gaming</h2>
+            <p class="section-subtitle">Retiros en Rivera y Montevideo</p>
         </div>
 
         <div class="category" data-aos="fade-up">
-            <h3>🎮 Tarjetas Gráficas (GPU)</h3>
             <div class="guarantee-badge">
-                <span>Nuevas: 1 Año Garantía</span> | <span>Usadas: 30 días a 3 Meses Garantía</span>
+                <i class="fas fa-check-circle"></i> Nuevas: 1 Año | Usadas: 3 Meses
             </div>
-
+            
             <div class="slider-container">
-                <button class="prev" onclick="moveSlide('gpu-slider', -1)">&#10094;</button>
-                <div class="slider" id="gpu-slider">
-                    <div class="slide"><img src="img/gnueva001.jpg" alt="GPU Nueva"><p>GPUs Nuevas en Caja</p></div>
-                    <div class="slide"><img src="img/gusada001.jpg" alt="GPU Usada"><p>GPUs Usadas Seleccionadas</p></div>
-                    <div class="slide"><img src="img/gnueva002.jpg" alt="GPU Stock"><p>Stock actualizado</p></div>
+                <button class="slider-btn prev" onclick="moveSlide('pc-slider', -1)">&#10094;</button>
+                <div class="slider" id="pc-slider">
+                    <div class="slide">
+                        <img src="img/pcnueva001.jpg" alt="PC 1">
+                        <div class="slide-caption"><p>PC Nuevas - Alto Rendimiento</p></div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/pcusada001.jpg" alt="PC 2">
+                        <div class="slide-caption"><p>Equipos Verificados y Garantidos</p></div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/pcnueva002.jpg" alt="PC 3">
+                        <div class="slide-caption"><p>Setups Personalizados</p></div>
+                    </div>
                 </div>
-                <button class="next" onclick="moveSlide('gpu-slider', 1)">&#10095;</button>
+                <button class="slider-btn next" onclick="moveSlide('pc-slider', 1)">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 5rem;" data-aos="fade-up">
+            <h2 class="section-title">Tarjetas Gráficas</h2>
+            <p class="section-subtitle">Potencia gráfica al mejor precio</p>
+        </div>
+
+        <div class="category" data-aos="fade-up">
+            <div class="guarantee-badge">
+                <i class="fas fa-shield-alt"></i> Garantía 30 días a 1 Año
+            </div>
+            
+            <div class="slider-container">
+                <button class="slider-btn prev" onclick="moveSlide('gpu-slider', -1)">&#10094;</button>
+                <div class="slider" id="gpu-slider">
+                    <div class="slide">
+                        <img src="img/gnueva001.jpg" alt="GPU 1">
+                        <div class="slide-caption"><p>Gráficas Nuevas en Caja</p></div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/gusada001.jpg" alt="GPU 2">
+                        <div class="slide-caption"><p>Gráficas Usadas Seleccionadas</p></div>
+                    </div>
+                </div>
+                <button class="slider-btn next" onclick="moveSlide('gpu-slider', 1)">&#10095;</button>
             </div>
         </div>
     </section>
 
     <section class="container" style="padding-top: 0;" data-aos="fade-up">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Preguntas Frecuentes</h2>
         <div class="faq-container">
             <details class="faq-item">
-                <summary>¿Qué garantía tienen los equipos?</summary>
-                <p>Para equipos y piezas <strong>NUEVAS</strong> ofrecemos 1 año de garantía escrita. Para hardware <strong>USADO</strong>, brindamos 3 meses de garantía total y de 30 días a 3 meses para GPUs usadas (según modelo).</p>
+                <summary>¿Cómo funcionan las garantías?</summary>
+                <p>La transparencia es nuestra prioridad. Para equipos <strong>NUEVOS</strong> tienes 1 año de garantía escrita. Para hardware <strong>USADO</strong>, ofrecemos 3 meses de garantía total (y de 30 a 90 días en GPUs específicas).</p>
             </details>
             <details class="faq-item">
-                <summary>¿Hacen envíos a todo el país?</summary>
-                <p>Sí, realizamos envíos a todo el Uruguay por la agencia de tu preferencia. También contamos con retiro presencial en <strong>Rivera</strong> y <strong>Montevideo</strong>.</p>
+                <summary>¿Hacen envíos al interior?</summary>
+                <p>Sí, enviamos a todo el país (DAC, Nuñez, Turil, etc.). Embalamos con protección especial para hardware delicado.</p>
             </details>
             <details class="faq-item">
-                <summary>¿Aceptan hardware como parte de pago?</summary>
-                <p>Evaluamos tu hardware usado caso por caso para descontar del precio final de tu nueva PC Gamer. ¡Consúltanos al WhatsApp!</p>
+                <summary>¿Toman permutas?</summary>
+                <p>Sí, evaluamos tu hardware usado como parte de pago para actualizar tu setup. Contáctanos por WhatsApp para cotizar.</p>
             </details>
         </div>
     </section>
 
-    <section id="webdev" class="bg-dark">
+    <section id="webdev" class="bg-gradient container" style="max-width: 100%;">
         <div class="container">
-            <h2 class="section-title text-white" data-aos="fade-up">Mis Proyectos Web</h2>
-            <p class="text-white center-text" data-aos="fade-up">Desarrollo de sitios a medida, e-commerce y landing pages.</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Desarrollo Web</h2>
+                <p class="section-subtitle">Creamos la presencia digital de tu negocio</p>
+            </div>
             
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-aos="zoom-in">
-                    <div class="img-overflow"><img src="img/web_churchil.jpg" alt="Proyecto Churchil"></div>
+                <div class="portfolio-item" data-aos="fade-up">
+                    <div class="img-overflow"><img src="img/web_churchil.jpg" alt="Churchil"></div>
                     <div class="portfolio-info">
                         <h4>Proyecto Churchil</h4>
-                        <p>Desarrollo Web Full Stack</p>
+                        <p>Plataforma Full Stack</p>
                     </div>
                 </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="img-overflow"><img src="img/web_giovani.jpg" alt="Proyecto DJ Giovani"></div>
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-overflow"><img src="img/web_giovani.jpg" alt="Giovani"></div>
                     <div class="portfolio-info">
                         <h4>DJ Giovani</h4>
-                        <p>Sitio Web Personal & Booking</p>
+                        <p>Web de Marca Personal</p>
                     </div>
                 </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="img-overflow"><img src="img/slide001.jpg" alt="FB Informática Web"></div>
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-overflow"><img src="img/slide001.jpg" alt="FB Info"></div>
                     <div class="portfolio-info">
                         <h4>FB Informática</h4>
-                        <p>E-commerce y Servicios IT</p>
+                        <p>E-commerce & Servicios</p>
                     </div>
                 </div>
             </div>
@@ -321,30 +438,52 @@
     </section>
 
     <footer id="contacto">
-        <div class="container" data-aos="fade-up">
-            <h2 class="section-title text-white">Contáctanos</h2>
+        <div class="container" style="padding-bottom: 0;">
+            <div class="section-header">
+                <h2 class="section-title">Hablemos de tu Proyecto</h2>
+            </div>
+            
             <div class="contact-wrapper">
-                <div class="contact-info-box">
-                    <h3>Información</h3>
-                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/59892236811" target="_blank">092 236 811</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Retiros en: <strong>Rivera</strong> y <strong>Montevideo</strong></p>
-                    <div class="social-links-footer">
+                <div class="contact-box" data-aos="fade-right">
+                    <h3>Contacto Directo</h3>
+                    <div class="info-line">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/59892236811" target="_blank">092 236 811</a>
+                    </div>
+                    <div class="info-line">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Retiros: Rivera & Montevideo</span>
+                    </div>
+                    <div class="info-line">
+                        <i class="far fa-clock"></i>
+                        <span>Respuesta inmediata</span>
+                    </div>
+
+                    <div class="social-icons">
                         <a href="https://instagram.com/fbinformaticauy" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://facebook.com/fbinformatica2020" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
-                <div class="contact-form-box">
+
+                <div class="contact-box" data-aos="fade-left">
                     <h3>Envíame un mensaje</h3>
                     <form action="https://formspree.io/f/mojewlbe" method="POST">
-                        <div class="form-group"><input type="text" name="nombre" placeholder="Tu Nombre" required></div>
-                        <div class="form-group"><input type="email" name="email" placeholder="Tu Email" required></div>
-                        <div class="form-group"><textarea name="mensaje" rows="4" placeholder="Consulta sobre PC, GPU o Web..." required></textarea></div>
-                        <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 FB Informática. Desarrollado por FB Informática.</p>
+
+            <div class="footer-copy">
+                <p>&copy; 2026 FB Informática. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -354,50 +493,29 @@
     </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script>
-        // Inicializar animaciones AOS
-        AOS.init({
-            duration: 800, 
-            once: true, 
-            offset: 100 
-        });
+        // Iniciar animaciones
+        AOS.init({ duration: 800, once: true });
 
-        // Funcionalidad Menú Hamburguesa (Móvil)
+        // Menú Móvil
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
-
-        if(mobileMenu) {
+        if(mobileMenu){
             mobileMenu.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
-                const icon = mobileMenu.querySelector('i');
-                if (icon.classList.contains('fa-bars')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
             });
         }
 
-        // Funcionalidad Sliders (PC y GPU)
+        // Sliders
         function moveSlide(sliderId, direction) {
             const slider = document.getElementById(sliderId);
             if (!slider) return;
-
             const slides = slider.querySelectorAll('.slide');
             const totalSlides = slides.length;
-            
             let currentIndex = parseInt(slider.getAttribute('data-index')) || 0;
             currentIndex += direction;
-
-            if (currentIndex >= totalSlides) {
-                currentIndex = 0;
-            } else if (currentIndex < 0) {
-                currentIndex = totalSlides - 1;
-            }
-
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
             slider.setAttribute('data-index', currentIndex);
             slider.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
