@@ -152,7 +152,35 @@
         .prev { left: 20px; } .next { right: 20px; }
 
         /* =========================================
-           6. FAQ
+           6. SERVICIOS (NUEVO)
+           ========================================= */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 3rem;
+        }
+        .service-card {
+            background: #1e1e1e; padding: 40px; border-radius: 15px; border: 1px solid #333;
+            transition: 0.3s; text-align: center; position: relative; overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-10px); border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,123,255,0.1);
+        }
+        .service-card i {
+            font-size: 3rem; color: var(--primary); margin-bottom: 20px;
+            background: rgba(0,123,255,0.1); padding: 20px; border-radius: 50%;
+            width: 90px; height: 90px; display: inline-flex; align-items: center; justify-content: center;
+        }
+        .service-card h3 { color: white; font-size: 1.5rem; margin-bottom: 15px; }
+        .service-card p { color: #ccc; font-size: 0.95rem; margin-bottom: 25px; }
+        .service-btn {
+            display: inline-block; padding: 10px 25px; border: 1px solid var(--primary);
+            color: var(--primary); text-decoration: none; border-radius: 30px;
+            font-weight: 500; transition: 0.3s;
+        }
+        .service-btn:hover { background: var(--primary); color: white; }
+
+        /* =========================================
+           7. FAQ
            ========================================= */
         .faq-container { max-width: 800px; margin: auto; }
         .faq-item {
@@ -170,7 +198,7 @@
         .faq-item p { padding: 20px; color: #ccc; border-top: 1px solid #333; font-size: 0.95rem; }
 
         /* =========================================
-           7. PORTFOLIO & TESTIMONIOS (NUEVO)
+           8. PORTFOLIO & TESTIMONIOS
            ========================================= */
         .bg-gradient { background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%); }
         .portfolio-grid { 
@@ -223,7 +251,7 @@
         @keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
 
         /* =========================================
-           8. FOOTER & EXTRAS
+           9. FOOTER & EXTRAS
            ========================================= */
         footer { background: #0a0a0a; color: white; border-top: 1px solid #222; padding: 5rem 0 2rem; }
         .contact-wrapper { display: flex; flex-wrap: wrap; gap: 3rem; margin-top: 2rem; }
@@ -298,7 +326,7 @@
         <ul class="nav-links">
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#hardware">HARDWARE</a></li>
-            <li><a href="#webdev">DESARROLLO WEB</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li> <li><a href="#webdev">WEB</a></li>
             <li><a href="#contacto">CONTACTO</a></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
@@ -413,6 +441,36 @@
                 <summary>¿Toman permutas?</summary>
                 <p>Sí, evaluamos tu hardware usado como parte de pago para actualizar tu setup. Contáctanos por WhatsApp para cotizar.</p>
             </details>
+        </div>
+    </section>
+
+    <section id="servicios" class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Servicios Especializados</h2>
+            <p class="section-subtitle">Soluciones profesionales para creadores y estudios</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-video"></i>
+                <h3>Setup Streaming</h3>
+                <p>Configuración completa de OBS, doble PC, cámaras, iluminación y audio para Twitch/YouTube.</p>
+                <a href="https://wa.me/59892236811?text=Hola,%20me%20interesa%20el%20setup%20de%20Streaming" target="_blank" class="service-btn">Consultar</a>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-music"></i>
+                <h3>Audio & Estudios</h3>
+                <p>Instalación de Home Studios, gestión de cableado, interfaces de audio y acústica básica.</p>
+                <a href="https://wa.me/59892236811?text=Hola,%20me%20interesa%20asesoramiento%20para%20Estudio" target="_blank" class="service-btn">Consultar</a>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-tools"></i>
+                <h3>Instalación & Mantenimiento</h3>
+                <p>Instalación de Windows, drivers, optimización de sistemas y limpieza de hardware.</p>
+                <a href="https://wa.me/59892236811?text=Hola,%20necesito%20servicio%20tecnico" target="_blank" class="service-btn">Consultar</a>
+            </div>
         </div>
     </section>
 
