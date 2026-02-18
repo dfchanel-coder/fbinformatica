@@ -143,6 +143,17 @@
         }
         .service-btn:hover { background: var(--primary); color: white; }
 
+        /* Estilo para la insignia de la Productora */
+        .productora-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin: 15px 0; padding: 8px 15px;
+            background: rgba(255, 193, 7, 0.1); border: 1px solid var(--gold);
+            color: var(--gold); border-radius: 8px;
+            font-size: 0.85rem; font-weight: 500; text-decoration: none;
+            transition: 0.3s; width: 100%; justify-content: center;
+        }
+        .productora-badge:hover { background: var(--gold); color: #121212; transform: translateY(-2px); }
+
         /* =========================================
            7. PORTFOLIO WEB (LINKS)
            ========================================= */
@@ -309,21 +320,26 @@
                 <i class="fas fa-video"></i>
                 <h3>Setup Streaming</h3>
                 <p>Configuración completa de OBS, doble PC, cámaras, iluminación y audio para Twitch/YouTube.</p>
-                <a href="https://wa.me/59892236811?text=Hola,%20me%20interesa%20el%20setup%20de%20Streaming" target="_blank" class="service-btn">Consultar</a>
+                
+                <a href="https://elotroladodelacosa.uy" target="_blank" class="productora-badge" title="El Otro Lado de la Cosa | Estudio de Streaming & Podcast en Rivera">
+                    <i class="fas fa-microphone-alt"></i> El Otro Lado de la Cosa
+                </a>
+
+                <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web.%20Me%20interesa%20el%20servicio%20de%20Setup%20para%20Streaming." target="_blank" class="service-btn">Consultar</a>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-music"></i>
                 <h3>Audio & Estudios</h3>
                 <p>Instalación de Home Studios, gestión de cableado, interfaces de audio y acústica básica.</p>
-                <a href="https://wa.me/59892236811?text=Hola,%20me%20interesa%20asesoramiento%20para%20Estudio" target="_blank" class="service-btn">Consultar</a>
+                <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web.%20Me%20gustaría%20asesoramiento%20para%20Audio%20y%20Estudios." target="_blank" class="service-btn">Consultar</a>
             </div>
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-tools"></i>
-                <h3>Infraestructura & Mantenimiento</h3>
+                <h3>Infraestructura IT</h3>
                 <p>Armado de equipos corporativos, mantenimiento de sistemas, software a medida y redes.</p>
-                <a href="https://wa.me/59892236811?text=Hola,%20necesito%20servicio%20IT" target="_blank" class="service-btn">Consultar</a>
+                <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web.%20Necesito%20consultar%20por%20Infraestructura%20IT%20y%20Mantenimiento." target="_blank" class="service-btn">Consultar</a>
             </div>
         </div>
     </section>
@@ -400,17 +416,18 @@
                 </div>
 
                 <div class="contact-box" data-aos="fade-left">
-    <h3>Envianos tu consulta</h3>
-    <form action="https://formspree.io/f/xwvnqqqj" method="POST">
-        <div class="form-group"><input type="text" name="nombre" placeholder="Nombre completo" required></div>
-        <div class="form-group"><input type="email" name="email" placeholder="Correo electrónico" required></div>
-        <div class="form-group"><textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
-        
-        <input type="hidden" name="_subject" value="Nueva consulta desde la web de FB Informática!">
-        
-        <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
-    </form>
-</div>
+                    <h3>Envianos tu consulta</h3>
+                    <form action="https://formspree.io/f/xwvnqqqj" method="POST">
+                        <div class="form-group"><input type="text" name="nombre" placeholder="Nombre completo" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Correo electrónico" required></div>
+                        <div class="form-group"><textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
+                        
+                        <input type="hidden" name="_subject" value="Nueva consulta desde la web de FB Informática!">
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
 
             <div class="footer-copy">
                 <p>&copy; 2026 FB Informática. Todos los derechos reservados.</p>
@@ -418,7 +435,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web%20y%20quiero%20hacer%20una%20consulta" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/59892236811?text=Hola,%20estaba%20viendo%20tu%20web%20y%20quería%20hacerte%20una%20consulta%20general." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
     
