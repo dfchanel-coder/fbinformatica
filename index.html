@@ -1,471 +1,680 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-UY">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FB Informática | Soluciones Tecnológicas y Desarrollo Web</title>
-    
-    <meta name="description" content="FB Informática: Hub de soluciones tecnológicas. Especialistas en Desarrollo Web, Setup de Streaming y Servicio Técnico Profesional en Uruguay.">
+
+    <!-- SEO -->
+    <title>Desarrollo Web, Apps e IA en Uruguay | FB Informática</title>
+    <meta name="description" content="Desarrollo de páginas web, tiendas online, apps a medida y agentes de IA personalizados en Uruguay. Trabajá con FB Informática y pedí tu presupuesto.">
     <meta name="author" content="FB Informática">
-    <meta property="og:title" content="FB Informática | Tu Partner Tecnológico">
-    <meta property="og:image" content="img/logo.jpg">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#06070c">
+    <link rel="canonical" href="https://www.fbinformaticauy.com/">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FB Informática">
+    <meta property="og:locale" content="es_UY">
+    <meta property="og:title" content="Desarrollo Web, Apps e IA en Uruguay | FB Informática">
+    <meta property="og:description" content="Páginas web, tiendas online, apps a medida y agentes de IA personalizados. Trabajá directo con el desarrollador.">
+    <meta property="og:url" content="https://www.fbinformaticauy.com/">
+    <meta property="og:image" content="https://www.fbinformaticauy.com/img/banner.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="819">
 
-    <style>
-        /* =========================================
-           1. VARIABLES Y BASE
-           ========================================= */
-        :root {
-            --primary: #007bff;
-            --primary-gradient: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-main: #f4f4f4;
-            --text-muted: #a0a0a0;
-            --whatsapp: #25d366;
-            --gold: #ffc107;
-        }
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Desarrollo Web, Apps e IA en Uruguay | FB Informática">
+    <meta name="twitter:description" content="Páginas web, tiendas online, apps a medida y agentes de IA personalizados en Uruguay.">
+    <meta name="twitter:image" content="https://www.fbinformaticauy.com/img/banner.jpg">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+    <!-- Iconos -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="img/favicon.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="img/logo.jpg">
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-main);
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+    <!-- Tipografía: 2 familias máximo (Space Grotesk + Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 
-        input, button, textarea, select { font-family: 'Poppins', sans-serif; }
+    <link rel="stylesheet" href="css/styles.css">
 
-        /* =========================================
-           2. NAVEGACIÓN
-           ========================================= */
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(18, 18, 18, 0.95);
-            padding: 1rem 5%; position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid #333; backdrop-filter: blur(10px);
-        }
-        .logo img { height: 50px; border-radius: 50%; border: 2px solid var(--primary); }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links li a { 
-            color: white; text-decoration: none; font-weight: 500; font-size: 0.95rem;
-            position: relative; transition: color 0.3s;
-        }
-        .nav-links li a:hover { color: var(--primary); }
-        .nav-links li a::after {
-            content: ''; display: block; width: 0; height: 2px; 
-            background: var(--primary-gradient); transition: width 0.3s; margin-top: 5px;
-        }
-        .nav-links li a:hover::after { width: 100%; }
-        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    <script>
+        document.documentElement.classList.add('js');
+        // Red de seguridad: si main.js no carga, mostramos el contenido igual.
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                if (!window.__fbReady) {
+                    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+                }
+            }, 1500);
+        });
+    </script>
 
-        /* =========================================
-           3. HUB PRESENTATION (NUEVO HEADER)
-           ========================================= */
-        .presentation-header {
-            padding: 8rem 5% 5rem;
-            text-align: center;
-            background: radial-gradient(circle at center, #1a1a1a 0%, var(--dark-bg) 100%);
-            border-bottom: 1px solid #222;
-        }
-        .presentation-header h1 {
-            font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; line-height: 1.2;
-            background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .presentation-header p {
-            font-size: 1.2rem; color: #ddd; max-width: 600px; margin: 0 auto 2rem; font-weight: 300;
-        }
-
-        /* =========================================
-           4. FEATURES
-           ========================================= */
-        .features-strip { padding: 3rem 0; background: #1a1a1a; border-bottom: 1px solid #333; }
-        .features-container {
-            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
-            max-width: 1200px; margin: auto; padding: 0 5%;
-        }
-        .feature-box {
-            text-align: center; padding: 2rem; flex: 1; min-width: 160px; max-width: 220px;
-            background: #252525; border-radius: 15px; border: 1px solid #333;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .feature-box:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .feature-box i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .feature-box h3 { font-size: 1.1rem; color: white; margin-bottom: 0.5rem; }
-        .feature-box p { font-size: 0.85rem; color: var(--text-muted); }
-
-        /* =========================================
-           5. BASE CONTAINER & TITLES
-           ========================================= */
-        .container { padding: 6rem 5%; max-width: 1200px; margin: auto; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-title { 
-            font-size: 2.5rem; color: white; margin-bottom: 10px; position: relative; display: inline-block; 
-        }
-        .section-title::after {
-            content: ''; display: block; width: 60px; height: 4px; 
-            background: var(--primary); margin: 15px auto 0; border-radius: 2px;
-        }
-        .section-subtitle { color: var(--text-muted); font-size: 1.1rem; }
-
-        /* =========================================
-           6. SERVICIOS
-           ========================================= */
-        .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 3rem;
-        }
-        .service-card {
-            background: #1e1e1e; padding: 40px; border-radius: 15px; border: 1px solid #333;
-            transition: 0.3s; text-align: center; position: relative; overflow: hidden;
-        }
-        .service-card:hover {
-            transform: translateY(-10px); border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0,123,255,0.1);
-        }
-        .service-card i {
-            font-size: 3rem; color: var(--primary); margin-bottom: 20px;
-            background: rgba(0,123,255,0.1); padding: 20px; border-radius: 50%;
-            width: 90px; height: 90px; display: inline-flex; align-items: center; justify-content: center;
-        }
-        .service-card h3 { color: white; font-size: 1.5rem; margin-bottom: 15px; }
-        .service-card p { color: #ccc; font-size: 0.95rem; margin-bottom: 25px; }
-        .service-btn {
-            display: inline-block; padding: 10px 25px; border: 1px solid var(--primary);
-            color: var(--primary); text-decoration: none; border-radius: 30px;
-            font-weight: 500; transition: 0.3s;
-        }
-        .service-btn:hover { background: var(--primary); color: white; }
-
-        /* Estilo para la insignia de la Productora */
-        .productora-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            margin: 15px 0; padding: 8px 15px;
-            background: rgba(255, 193, 7, 0.1); border: 1px solid var(--gold);
-            color: var(--gold); border-radius: 8px;
-            font-size: 0.85rem; font-weight: 500; text-decoration: none;
-            transition: 0.3s; width: 100%; justify-content: center;
-        }
-        .productora-badge:hover { background: var(--gold); color: #121212; transform: translateY(-2px); }
-
-        /* =========================================
-           7. PORTFOLIO WEB (LINKS)
-           ========================================= */
-        .bg-gradient { background: linear-gradient(180deg, #121212 0%, #0a0a0a 100%); }
-        .portfolio-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; 
-        }
-        .portfolio-item { 
-            background: #1e1e1e; border-radius: 15px; overflow: hidden; 
-            border: 1px solid #333; transition: transform 0.4s, box-shadow 0.4s;
-            text-decoration: none; display: block;
-        }
-        .portfolio-item:hover { 
-            transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,123,255,0.15); border-color: #444; 
-        }
-        .img-overflow { height: 200px; overflow: hidden; position: relative; background: #222; }
-        .portfolio-item img { 
-            width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; 
-        }
-        .portfolio-item:hover img { transform: scale(1.05); }
-        .portfolio-info { padding: 25px; text-align: center; }
-        .portfolio-info h4 { color: white; font-size: 1.3rem; margin-bottom: 5px; }
-        .portfolio-info p { color: #888; font-size: 0.9rem; margin-bottom: 15px;}
-        .visit-link { 
-            color: var(--primary); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            display: inline-flex; align-items: center; gap: 8px;
-        }
-        .portfolio-item:hover .visit-link { color: #00d2ff; }
-
-        /* =========================================
-           8. CONTACTO & FOOTER
-           ========================================= */
-        footer { background: #0a0a0a; color: white; border-top: 1px solid #222; padding: 5rem 0 2rem; }
-        .contact-wrapper { display: flex; flex-wrap: wrap; gap: 3rem; margin-top: 2rem; }
-        .contact-box {
-            flex: 1; min-width: 300px; padding: 40px; border-radius: 20px;
-            background: #151515; border: 1px solid #333;
-        }
-        .contact-box h3 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.4rem; }
-        .info-line { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 15px; }
-        .info-line i { font-size: 1.4rem; color: var(--primary); width: 30px; text-align: center; }
-        .info-line span, .info-line a { font-size: 1rem; color: #ccc; text-decoration: none; transition: 0.3s; }
-        .info-line a:hover { color: var(--primary); }
-        
-        /* Highlight box for Comprobantes */
-        .billing-box {
-            background: rgba(0, 123, 255, 0.05); border: 1px dashed var(--primary);
-            padding: 15px; border-radius: 10px; margin-top: 10px;
-        }
-        .billing-box .info-line { margin-bottom: 0; }
-
-        .social-icons { margin-top: 2rem; }
-        .social-icons a { 
-            display: inline-flex; width: 45px; height: 45px; background: #222; 
-            color: white; border-radius: 50%; align-items: center; justify-content: center;
-            font-size: 1.2rem; margin-right: 15px; transition: 0.3s; text-decoration: none;
-        }
-        .social-icons a:hover { background: var(--primary); transform: translateY(-3px); }
-        .form-group { margin-bottom: 20px; }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 15px; background: #222; border: 1px solid #444; 
-            border-radius: 8px; color: white; font-size: 1rem; transition: 0.3s;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none; border-color: var(--primary); background: #2a2a2a;
-        }
-        .btn {
-            background: var(--primary-gradient); color: white; padding: 14px 35px;
-            text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;
-            display: inline-block; box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
-            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; border: none; cursor: pointer;
-        }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 123, 255, 0.5); }
-        
-        .footer-copy { 
-            text-align: center; margin-top: 4rem; padding-top: 2rem; 
-            border-top: 1px solid #222; color: #666; font-size: 0.9rem; 
-        }
-
-        /* Botón WhatsApp & Top */
-        .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-            background-color: var(--whatsapp); color: #FFF; border-radius: 50%;
-            text-align: center; font-size: 32px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 999; display: flex; align-items: center; justify-content: center;
-            transition: transform 0.3s; text-decoration: none;
-        }
-        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
-        
-        .to-top {
-            position: fixed; bottom: 100px; right: 35px; background: #333; color: white;
-            width: 50px; height: 50px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; cursor: pointer;
-            opacity: 0; pointer-events: none; transition: 0.3s; z-index: 998;
-        }
-        .to-top.active { opacity: 1; pointer-events: all; }
-        .to-top:hover { background: var(--primary); }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .presentation-header h1 { font-size: 2.2rem; }
-            .nav-links {
-                position: fixed; right: -100%; top: 73px; height: calc(100vh - 73px);
-                background: #121212; flex-direction: column; width: 80%; padding: 3rem;
-                transition: right 0.4s ease-in-out; border-left: 1px solid #333;
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.fbinformaticauy.com/#organizacion",
+        "name": "FB Informática",
+        "url": "https://www.fbinformaticauy.com/",
+        "logo": "https://www.fbinformaticauy.com/img/logo.jpg",
+        "description": "Agencia de tecnología especializada en desarrollo de páginas web, tiendas online, aplicaciones a medida, agentes de IA, setup de streaming y soporte informático en Uruguay.",
+        "email": "consultas@fbinformaticauy.com",
+        "telephone": "+59892236811",
+        "areaServed": { "@type": "Country", "name": "Uruguay" },
+        "sameAs": [
+            "https://instagram.com/fbinformaticauy",
+            "https://facebook.com/fbinformatica2020"
+        ],
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "ventas y presupuestos",
+                "email": "consultas@fbinformaticauy.com",
+                "telephone": "+59892236811",
+                "availableLanguage": ["Spanish"]
             }
-            .nav-links.active { right: 0; }
-            .menu-toggle { display: block; }
-            .features-container { overflow-x: auto; justify-content: flex-start; padding-bottom: 20px; }
-        }
-    </style>
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.fbinformaticauy.com/#sitio",
+        "url": "https://www.fbinformaticauy.com/",
+        "name": "FB Informática",
+        "inLanguage": "es-UY",
+        "publisher": { "@id": "https://www.fbinformaticauy.com/#organizacion" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta hacer una página web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El costo depende del alcance del proyecto: cantidad de secciones, si hay tienda online, sistema de pedidos o integraciones. Contanos qué necesitás y te enviamos un presupuesto sin compromiso."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto demora un proyecto web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende de la complejidad y de los contenidos disponibles. Al definir la propuesta acordamos un plazo de entrega y lo cumplimos, con avances durante todo el desarrollo."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué son los agentes de IA y para qué sirven?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Son asistentes entrenados con la información de tu negocio. Sirven para responder consultas de clientes, derivar pedidos, ordenar tareas y conectar con tu WhatsApp o correo, trabajando las 24 horas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Hacen aplicaciones y sistemas a medida?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Desarrollamos web apps, sistemas de gestión, pedidos online, paneles administrativos y software adaptado a la operación de tu negocio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Trabajan con clientes de todo Uruguay?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Trabajamos de forma remota con clientes de todo el país, con seguimiento por WhatsApp y correo durante todo el proyecto."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Ofrecen soporte después de la entrega?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. Después de la entrega ayudamos con la publicación, las correcciones y el mantenimiento del sitio o sistema."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img src="img/logo.jpg" alt="FB">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#inicio">INICIO</a></li>
-            <li><a href="#servicios">SERVICIOS</a></li> 
-            <li><a href="#webdev">PORTFOLIO WEB</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
-    </nav>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-    <header id="inicio" class="presentation-header" data-aos="fade-up">
-        <h1>TECNOLOGÍA & DESARROLLO DIGITAL</h1>
-        <p>Expertos en Soluciones Web, Setup para Creadores de Contenido y Arquitectura IT.</p>
-        <a href="#contacto" class="btn">Solicitar Asesoría</a>
+    <!-- Sprite de iconos (SVG inline, sin dependencias externas) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" focusable="false">
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M8 16L16 8M9.5 8H16v6.5"/></symbol>
+        <symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="M6 14.5l6-6 6 6"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 8L4.5 12l4 4M15.5 8l4 4-4 4M13.5 5.5l-3 13"/></symbol>
+        <symbol id="i-app" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+        <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4.5" y="8.5" width="15" height="10.5" rx="3"/><path d="M12 8.5V5"/><circle cx="12" cy="3.6" r="1.2"/><path d="M9.3 13.2h.01M14.7 13.2h.01M9.8 16.3h4.4"/></symbol>
+        <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="12.5" height="12" rx="2.5"/><path d="M15.5 10.5l5-3v9l-5-3z"/></symbol>
+        <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17.5V5.5l10-2v12"/><circle cx="6.7" cy="17.7" r="2.3"/><circle cx="16.7" cy="15.7" r="2.3"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6.5" rx="2"/><rect x="3" y="13.5" width="18" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.7h.01"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.6 7.5l8.4 5.6 8.4-5.6"/></symbol>
+        <symbol id="i-money" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.3v9.4M14.4 9.4c0-1-1.1-1.5-2.4-1.5s-2.4.6-2.4 1.5 1 1.5 2.4 1.9 2.4.9 2.4 1.9-1.1 1.5-2.4 1.5-2.4-.5-2.4-1.5"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.7 6.5-10.4A6.5 6.5 0 0 0 5.5 10.6C5.5 15.3 12 21 12 21z"/><circle cx="12" cy="10.4" r="2.4"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 3.6a8.4 8.4 0 0 0-7.2 12.8L3.6 20.4l4.2-1.1A8.4 8.4 0 1 0 12 3.6z"/><path d="M9.1 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.7 1.7c.1.3 0 .5-.1.7l-.4.5c-.2.2-.2.4-.1.6.5 1 1.3 1.8 2.3 2.3.2.1.4.1.6-.1l.5-.5c.2-.2.4-.2.7-.1l1.7.7c.4.2.5.4.5.6v.5c0 .3 0 .6-.4.8-.5.3-1.1.4-1.8.3-2.7-.5-5.3-3-5.8-5.7-.1-.7 0-1.3.3-1.8z"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.1" cy="6.9" r=".9" fill="currentColor" stroke="none"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M13.7 19.2v-5.4h1.8l.3-2.2h-2.1v-1.4c0-.6.2-1 1-1h1.2V7.2c-.2 0-.9-.1-1.7-.1-1.7 0-2.9 1-2.9 2.9v1.6H9.6v2.2h1.7v5.4"/></symbol>
+        <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2.8" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.2M9 21.2h6"/></symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 4l1.4 3.6L16 9l-3.6 1.4L11 14l-1.4-3.6L6 9l3.6-1.4z"/><path d="M17.5 14l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.6v5.6c0 4.3-3 8-7 9.8-4-1.8-7-5.5-7-9.8V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 12.2c0 4-3.8 7.2-8.5 7.2-1 0-2-.15-2.9-.42L4 20.5l1.4-3.6A6.9 6.9 0 0 1 3.5 12.2C3.5 8.2 7.3 5 12 5s8.5 3.2 8.5 7.2z"/><path d="M8.8 12h.01M12 12h.01M15.2 12h.01"/></symbol>
+        <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M13.5 4.5c3-1.3 6 1.7 4.7 4.7l-6.4 9.3-7.5-7.5z"/><path d="M8.5 15.5L5 19M13 11.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6z"/></symbol>
+    </svg>
+
+    <!-- ============ NAVEGACIÓN ============ -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a class="brand" href="#inicio">
+                <img src="img/logo.jpg" alt="" width="474" height="508">
+                <span class="brand-text">
+                    <strong>FB Informática</strong>
+                    <small>Desarrollo &amp; Tecnología</small>
+                </span>
+            </a>
+
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+                <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+                <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+                <span class="sr-only">Abrir menú de navegación</span>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Menú principal">
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#proceso">Cómo trabajamos</a></li>
+                    <li><a href="#preguntas">Preguntas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <a class="btn btn-primary btn-sm nav-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto." target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                    Pedir presupuesto
+                </a>
+            </nav>
+        </div>
     </header>
 
-    <section class="features-strip">
-        <div class="features-container">
-            <div class="feature-box" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fas fa-code"></i>
-                <h3>Desarrollo Web</h3>
-                <p>E-commerce y Corporativo</p>
-            </div>
-            <div class="feature-box" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-video"></i>
-                <h3>Estudios & Stream</h3>
-                <p>Setups Profesionales</p>
-            </div>
-            <div class="feature-box" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fas fa-server"></i>
-                <h3>Sistemas IT</h3>
-                <p>Asesoría y Mantenimiento</p>
-            </div>
-        </div>
-    </section>
+    <main id="contenido">
 
-    <section id="servicios" class="container">
-        <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Servicios Especializados</h2>
-            <p class="section-subtitle">Soluciones profesionales para empresas y creadores</p>
-        </div>
-        
-        <div class="services-grid">
-            <div class="service-card" data-aos="fade-up">
-                <i class="fas fa-video"></i>
-                <h3>Setup Streaming</h3>
-                <p>Configuración completa de OBS, doble PC, cámaras, iluminación y audio para Twitch/YouTube.</p>
-                
-                <a href="https://dfchanel-coder.github.io/elotroladodelacosa/" target="_blank" class="productora-badge" title="El Otro Lado de la Cosa | Estudio de Streaming & Podcast en Rivera">
-                    <i class="fas fa-microphone-alt"></i> El Otro Lado de la Cosa
-                </a>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="inicio">
+            <div class="container hero-inner">
+                <p class="eyebrow reveal"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> Agencia de tecnología · Uruguay</p>
+                <h1 class="reveal">Desarrollo web, apps y <span class="grad">agentes de IA</span> a medida</h1>
+                <p class="lead reveal">Creamos sitios web, tiendas online y sistemas que hacen crecer tu negocio.
+                    Trabajás directo con el desarrollador, desde la primera idea hasta la publicación.</p>
 
-                <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web.%20Me%20interesa%20el%20servicio%20de%20Setup%20para%20Streaming." target="_blank" class="service-btn">Consultar</a>
-            </div>
+                <div class="hero-actions reveal">
+                    <a class="btn btn-primary" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web%20y%20quiero%20pedir%20un%20presupuesto." target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                        Pedir presupuesto
+                    </a>
+                    <a class="btn btn-ghost" href="#proyectos">
+                        Ver proyectos realizados
+                        <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                    </a>
+                </div>
 
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-music"></i>
-                <h3>Audio & Estudios</h3>
-                <p>Instalación de Home Studios, gestión de cableado, interfaces de audio y acústica básica.</p>
-                <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web.%20Me%20gustaría%20asesoramiento%20para%20Audio%20y%20Estudios." target="_blank" class="service-btn">Consultar</a>
+                <ul class="pills reveal" aria-label="Servicios principales">
+                    <li>Sitios web</li>
+                    <li>Tiendas online</li>
+                    <li>Apps a medida</li>
+                    <li>Agentes de IA</li>
+                    <li>Setup streaming</li>
+                    <li>Soporte IT</li>
+                </ul>
             </div>
+        </section>
 
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-tools"></i>
-                <h3>Infraestructura IT</h3>
-                <p>Armado de equipos corporativos, mantenimiento de sistemas, software a medida y redes.</p>
-                <a href="https://wa.me/59892236811?text=Hola,%20vi%20tu%20web.%20Necesito%20consultar%20por%20Infraestructura%20IT%20y%20Mantenimiento." target="_blank" class="service-btn">Consultar</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="webdev" class="bg-gradient container" style="max-width: 100%;">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Nuestros Trabajos</h2>
-                <p class="section-subtitle">Presencia digital escalable y enfocada en ventas</p>
-            </div>
-            
-            <div class="portfolio-grid">
-                <a href="https://www.jartshop.com" target="_blank" class="portfolio-item" data-aos="fade-up">
-                    <div class="img-overflow"><img src="img/web_jartshop.jpg" alt="Jarts-Shop" onerror="this.src='https://via.placeholder.com/600x400/222/555?text=Jarts-Shop'"></div>
-                    <div class="portfolio-info">
-                        <h4>Jarts-Shop</h4>
-                        <p>Plataforma E-commerce de Perfumería</p>
-                        <span class="visit-link">Visitar Web <i class="fas fa-external-link-alt"></i></span>
+        <!-- ============ BENEFICIOS ============ -->
+        <section class="strip" aria-label="Por qué elegirnos">
+            <div class="container strip-grid">
+                <div class="strip-item reveal">
+                    <svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>
+                    <div>
+                        <h2>A medida, sin plantillas</h2>
+                        <p>Cada proyecto se diseña sobre tu objetivo y tu tipo de cliente.</p>
                     </div>
-                </a>
-
-                <a href="https://www.dulcemimos.com" target="_blank" class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="img-overflow"><img src="img/web_dulcemimos.jpg" alt="Dulce Mimos" onerror="this.src='https://via.placeholder.com/600x400/222/555?text=Dulce+Mimos'"></div>
-                    <div class="portfolio-info">
-                        <h4>Dulce Mimos</h4>
-                        <p>Tienda Online & Gestión de Pedidos</p>
-                        <span class="visit-link">Visitar Web <i class="fas fa-external-link-alt"></i></span>
+                </div>
+                <div class="strip-item reveal">
+                    <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+                    <div>
+                        <h2>Atención directa</h2>
+                        <p>Hablás con quien diseña y programa tu proyecto, sin intermediarios.</p>
                     </div>
-                </a>
-
-                <a href="https://www.djgiovani.com" target="_blank" class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="img-overflow"><img src="img/web_giovani.jpg" alt="DJ Giovani" onerror="this.src='https://via.placeholder.com/600x400/222/555?text=DJ+Giovani'"></div>
-                    <div class="portfolio-info">
-                        <h4>DJ Giovani</h4>
-                        <p>Sitio Web Oficial de Marca Personal</p>
-                        <span class="visit-link">Visitar Web <i class="fas fa-external-link-alt"></i></span>
+                </div>
+                <div class="strip-item reveal">
+                    <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+                    <div>
+                        <h2>Entrega acompañada</h2>
+                        <p>Te acompañamos en la publicación, las mejoras y el seguimiento.</p>
                     </div>
-                </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer id="contacto">
-        <div class="container" style="padding-bottom: 0;">
-            <div class="section-header">
-                <h2 class="section-title">Hablemos de tu Proyecto</h2>
+        <!-- ============ SERVICIOS ============ -->
+        <section class="section" id="servicios">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Servicios</p>
+                    <h2>Todo lo que tu negocio necesita <span class="grad">en tecnología</span></h2>
+                    <p class="section-sub">Desde una página que convierta hasta un asistente de IA que atienda tus consultas.</p>
+                </header>
+
+                <div class="cards">
+                    <article class="card reveal">
+                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+                        <h3>Desarrollo Web</h3>
+                        <p>Páginas corporativas, landing pages y tiendas online (e-commerce) rápidas, responsivas y listas para posicionar en Google.</p>
+                        <ul class="tick">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Diseño propio y responsive</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Optimizadas para SEO y velocidad</li>
+                        </ul>
+                        <a class="card-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web.%20Me%20interesa%20el%20servicio%20de%20Desarrollo%20Web." target="_blank" rel="noopener noreferrer">
+                            Consultar por web <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-app"/></svg></span>
+                        <h3>Aplicaciones a Medida</h3>
+                        <p>Web apps, sistemas de gestión, pedidos online y paneles administrativos adaptados a la forma en que trabajás.</p>
+                        <ul class="tick">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Flujo pensado para tu operación</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Escalable a futuro</li>
+                        </ul>
+                        <a class="card-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web.%20Me%20interesa%20desarrollar%20una%20aplicaci%C3%B3n%20a%20medida." target="_blank" rel="noopener noreferrer">
+                            Consultar por app <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+
+                    <article class="card card-featured reveal">
+                        <span class="card-badge">Nuevo</span>
+                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-bot"/></svg></span>
+                        <h3>Agentes de IA Personalizados</h3>
+                        <p>Asistentes entrenados con la información de tu negocio: responden consultas, derivan pedidos y ordenan tareas las 24 horas.</p>
+                        <ul class="tick">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Chatbot con tus contenidos</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Integración con WhatsApp y correo</li>
+                        </ul>
+                        <a class="card-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web.%20Me%20interesa%20un%20agente%20de%20IA%20personalizado%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer">
+                            Consultar por IA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></span>
+                        <h3>Setup de Streaming</h3>
+                        <p>Configuración completa de OBS, doble PC, cámaras, iluminación y audio para transmitir en Twitch o YouTube sin complicaciones.</p>
+                        <ul class="tick">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Escenas, alertas y comandos</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Prueba de transmisión final</li>
+                        </ul>
+                        <a class="card-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web.%20Me%20interesa%20el%20servicio%20de%20Setup%20para%20Streaming." target="_blank" rel="noopener noreferrer">
+                            Consultar por setup <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg></span>
+                        <h3>Audio &amp; Estudios</h3>
+                        <p>Armado de home studios, cableado, interfaces de audio y acústica básica para grabar o transmitir con buena calidad.</p>
+                        <ul class="tick">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Equipos recomendados según espacio</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Instalación y configuración</li>
+                        </ul>
+                        <a class="card-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web.%20Me%20gustar%C3%ADa%20asesoramiento%20para%20Audio%20y%20Estudios." target="_blank" rel="noopener noreferrer">
+                            Consultar por audio <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+
+                    <article class="card reveal">
+                        <span class="card-icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></span>
+                        <h3>Infraestructura IT</h3>
+                        <p>Armado de equipos corporativos, mantenimiento de sistemas, redes y software a medida para tu oficina o comercio.</p>
+                        <ul class="tick">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Diagnóstico y mantenimiento</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Redes y seguridad básica</li>
+                        </ul>
+                        <a class="card-cta" href="https://wa.me/59892236811?text=Hola%2C%20vengo%20de%20la%20web.%20Necesito%20consultar%20por%20Infraestructura%20IT%20y%20Mantenimiento." target="_blank" rel="noopener noreferrer">
+                            Consultar por IT <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </a>
+                    </article>
+                </div>
             </div>
-            
-            <div class="contact-wrapper">
-                <div class="contact-box" data-aos="fade-right">
-                    <h3>Información de Contacto</h3>
-                    <div class="info-line">
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/59892236811" target="_blank">092 236 811</a>
-                    </div>
-                    <div class="info-line">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:consultas@fbinformaticauy.com">consultas@fbinformaticauy.com</a>
-                    </div>
-                    
-                    <div class="billing-box">
+        </section>
+
+        <!-- ============ PROYECTOS ============ -->
+        <section class="section section-alt" id="proyectos">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Portafolio</p>
+                    <h2>Trabajos <span class="grad">recientes</span></h2>
+                    <p class="section-sub">Sitios y productos digitales que ya están online.</p>
+                </header>
+
+                <div class="projects">
+                    <article class="project reveal">
+                        <a class="project-media" href="https://www.carlonplay.com" target="_blank" rel="noopener noreferrer">
+                            <img src="img/web_carlonplay.jpg" alt="Portada del sitio web de Carlon Play, oficial del creador de contenido Carlos Da Rosa" width="1176" height="992" loading="lazy" decoding="async">
+                            <span class="tag tag-new">Nuevo</span>
+                        </a>
+                        <div class="project-body">
+                            <h3>Carlon Play</h3>
+                            <p>Sitio oficial del creador de contenido Carlos Da Rosa: presentación, videos y redes en una página rápida y móvil.</p>
+                            <span class="tag">Sitio web · Creador de contenido</span>
+                            <a class="project-link" href="https://www.carlonplay.com" target="_blank" rel="noopener noreferrer">
+                                Visitar web <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project reveal">
+                        <a class="project-media" href="https://www.jartshop.com" target="_blank" rel="noopener noreferrer">
+                            <img src="img/web_jartshop.jpg" alt="Portada del e-commerce de perfumería Jarts-Shop" width="1600" height="738" loading="lazy" decoding="async">
+                        </a>
+                        <div class="project-body">
+                            <h3>Jarts-Shop</h3>
+                            <p>Tienda online de perfumería con catálogo de productos y compras 100% digitales.</p>
+                            <span class="tag">E-commerce</span>
+                            <a class="project-link" href="https://www.jartshop.com" target="_blank" rel="noopener noreferrer">
+                                Visitar web <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project reveal">
+                        <a class="project-media" href="https://www.dulcemimos.com" target="_blank" rel="noopener noreferrer">
+                            <img src="img/web_dulcemimos.jpg" alt="Portada de la tienda online Dulce Mimos" width="1600" height="736" loading="lazy" decoding="async">
+                        </a>
+                        <div class="project-body">
+                            <h3>Dulce Mimos</h3>
+                            <p>Tienda online con gestión de pedidos y entrega de productos en Montevideo.</p>
+                            <span class="tag">Tienda online · Pedidos</span>
+                            <a class="project-link" href="https://www.dulcemimos.com" target="_blank" rel="noopener noreferrer">
+                                Visitar web <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project reveal">
+                        <a class="project-media" href="https://www.djgiovani.com" target="_blank" rel="noopener noreferrer">
+                            <img src="img/web_giovani.jpg" alt="Portada del sitio web oficial del DJ Giovani" width="1600" height="795" loading="lazy" decoding="async">
+                        </a>
+                        <div class="project-body">
+                            <h3>DJ Giovani</h3>
+                            <p>Sitio web de marca personal con presentación, servicios y contacto directo.</p>
+                            <span class="tag">Marca personal</span>
+                            <a class="project-link" href="https://www.djgiovani.com" target="_blank" rel="noopener noreferrer">
+                                Visitar web <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project reveal">
+                        <div class="project-media project-media-icon">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg>
+                            <span class="tag">Proyecto entregado</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>El Otro Lado de la Cosa</h3>
+                            <p>Sitio web del estudio de streaming y podcast, junto con el armado técnico del setup de transmisión.</p>
+                            <span class="tag">Sitio web + setup de streaming</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROCESO ============ -->
+        <section class="section" id="proceso">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Proceso</p>
+                    <h2>Cómo es trabajar <span class="grad">con nosotros</span></h2>
+                    <p class="section-sub">Cuatro pasos simples, sin sorpresas.</p>
+                </header>
+
+                <ol class="steps">
+                    <li class="step reveal">
+                        <span class="step-num">01</span>
+                        <h3>Contanos tu idea</h3>
+                        <p>Nos escribís por WhatsApp o completás el formulario con lo que necesitás.</p>
+                    </li>
+                    <li class="step reveal">
+                        <span class="step-num">02</span>
+                        <h3>Propuesta y presupuesto</h3>
+                        <p>Definimos alcance, plazos y presupuesto antes de empezar a trabajar.</p>
+                    </li>
+                    <li class="step reveal">
+                        <span class="step-num">03</span>
+                        <h3>Diseño y desarrollo</h3>
+                        <p>Construimos tu proyecto y lo revisás avance por avance hasta aprobarlo.</p>
+                    </li>
+                    <li class="step reveal">
+                        <span class="step-num">04</span>
+                        <h3>Entrega y soporte</h3>
+                        <p>Publicamos, dejamos todo funcionando y te acompañamos después.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============ PREGUNTAS ============ -->
+        <section class="section section-alt" id="preguntas">
+            <div class="container container-narrow">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Dudas frecuentes</p>
+                    <h2>Preguntas <span class="grad">frecuentes</span></h2>
+                </header>
+
+                <div class="faq">
+                    <details class="faq-item reveal" open>
+                        <summary>¿Cuánto cuesta hacer una página web?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <p>Depende del alcance: cantidad de secciones, si hay tienda online, sistema de pedidos o integraciones. Contanos qué necesitás y te enviamos un presupuesto sin compromiso.</p>
+                    </details>
+
+                    <details class="faq-item reveal">
+                        <summary>¿Cuánto demora un proyecto web?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <p>Depende de la complejidad y de los contenidos disponibles. Al aprobar la propuesta acordamos un plazo de entrega y lo cumplimos, con avances durante todo el desarrollo.</p>
+                    </details>
+
+                    <details class="faq-item reveal">
+                        <summary>¿Qué son los agentes de IA y para qué sirven?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <p>Son asistentes entrenados con la información de tu negocio. Sirven para responder consultas de clientes, derivar pedidos, ordenar tareas y conectar con tu WhatsApp o correo.</p>
+                    </details>
+
+                    <details class="faq-item reveal">
+                        <summary>¿Hacen aplicaciones y sistemas a medida?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <p>Sí. Desarrollamos web apps, sistemas de gestión, pedidos online, paneles administrativos y software adaptado a la operación de tu negocio.</p>
+                    </details>
+
+                    <details class="faq-item reveal">
+                        <summary>¿Trabajan con clientes de todo Uruguay?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <p>Sí. Trabajamos de forma remota con clientes de todo el país, con seguimiento por WhatsApp y correo durante todo el proyecto.</p>
+                    </details>
+
+                    <details class="faq-item reveal">
+                        <summary>¿Ofrecen soporte después de la entrega?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <p>Sí. Después de la entrega ayudamos con la publicación, las correcciones y el mantenimiento del sitio o sistema.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACTO ============ -->
+        <section class="section" id="contacto">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Contacto</p>
+                    <h2>Contanos <span class="grad">tu proyecto</span></h2>
+                    <p class="section-sub">Respondemos por WhatsApp o correo. Presupuesto sin compromiso.</p>
+                </header>
+
+                <div class="contact">
+                    <div class="contact-info reveal">
+                        <h3>Información de contacto</h3>
+
                         <div class="info-line">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                            <span><strong>Envío de Comprobantes:</strong><br>
-                                <a href="mailto:ventas@fbinformaticauy.com" style="font-size: 0.9rem;">ventas@fbinformaticauy.com</a> o WhatsApp.
-                            </span>
+                            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                            <div>
+                                <span>WhatsApp</span>
+                                <a href="https://wa.me/59892236811" target="_blank" rel="noopener noreferrer">092 236 811</a>
+                            </div>
+                        </div>
+
+                        <div class="info-line">
+                            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                            <div>
+                                <span>Consultas</span>
+                                <a href="mailto:consultas@fbinformaticauy.com">consultas@fbinformaticauy.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-line">
+                            <svg class="icon" aria-hidden="true"><use href="#i-money"/></svg>
+                            <div>
+                                <span>Envío de comprobantes</span>
+                                <a href="mailto:ventas@fbinformaticauy.com">ventas@fbinformaticauy.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-line">
+                            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+                            <div>
+                                <span>Área de trabajo</span>
+                                <p>Uruguay · Atención remota</p>
+                            </div>
+                        </div>
+
+                        <div class="socials">
+                            <a href="https://instagram.com/fbinformaticauy" target="_blank" rel="noopener noreferrer" aria-label="FB Informática en Instagram (se abre en una pestaña nueva)">
+                                <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+                            </a>
+                            <a href="https://facebook.com/fbinformatica2020" target="_blank" rel="noopener noreferrer" aria-label="FB Informática en Facebook (se abre en una pestaña nueva)">
+                                <svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="social-icons">
-                        <a href="https://instagram.com/fbinformaticauy" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/fbinformatica2020" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <div class="contact-form reveal">
+                        <h3 id="form-title">Solicitá tu presupuesto</h3>
+                        <form action="https://formspree.io/f/xwvnqqqj" method="POST" aria-labelledby="form-title">
+                            <input type="hidden" name="_subject" value="Nueva consulta desde la web de FB Informática!">
+                            <input type="hidden" name="_next" value="https://www.fbinformaticauy.com/gracias.html">
+                            <div class="hp" aria-hidden="true">
+                                <label for="apellido">No completar este campo</label>
+                                <input type="text" id="apellido" name="apellido" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="field">
+                                <label for="nombre">Nombre y apellido</label>
+                                <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required>
+                            </div>
+
+                            <div class="field">
+                                <label for="mensaje">¿Qué necesitás?</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Ej.: necesito una tienda online para vender indumentaria…" required></textarea>
+                            </div>
+
+                            <button class="btn btn-primary btn-block" type="submit">Solicitar presupuesto</button>
+                            <p class="form-note">También podés escribirnos directo por
+                                <a href="https://wa.me/59892236811" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+                            </p>
+                        </form>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
 
-                <div class="contact-box" data-aos="fade-left">
-                    <h3>Envianos tu consulta</h3>
-                    <form action="https://formspree.io/f/xwvnqqqj" method="POST">
-                        <div class="form-group"><input type="text" name="nombre" placeholder="Nombre completo" required></div>
-                        <div class="form-group"><input type="email" name="email" placeholder="Correo electrónico" required></div>
-                        <div class="form-group"><textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
-                        
-                        <input type="hidden" name="_subject" value="Nueva consulta desde la web de FB Informática!">
-                        
-                        <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
-                    </form>
-                </div>
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="#inicio">
+                    <img src="img/logo.jpg" alt="" width="474" height="508" loading="lazy">
+                    <span class="brand-text">
+                        <strong>FB Informática</strong>
+                        <small>Desarrollo &amp; Tecnología</small>
+                    </span>
+                </a>
+                <p>Desarrollo de páginas web, apps a medida, agentes de IA, setup de streaming y soporte informático en Uruguay.</p>
             </div>
 
-            <div class="footer-copy">
-                <p>&copy; 2026 FB Informática. Todos los derechos reservados.</p>
+            <nav class="footer-col" aria-label="Secciones del sitio">
+                <h2>Secciones</h2>
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#proceso">Cómo trabajamos</a></li>
+                    <li><a href="#preguntas">Preguntas frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-col">
+                <h2>Servicios</h2>
+                <ul>
+                    <li><a href="#servicios">Desarrollo web</a></li>
+                    <li><a href="#servicios">Aplicaciones a medida</a></li>
+                    <li><a href="#servicios">Agentes de IA</a></li>
+                    <li><a href="#servicios">Setup de streaming</a></li>
+                    <li><a href="#servicios">Infraestructura IT</a></li>
+                </ul>
             </div>
+
+            <div class="footer-col">
+                <h2>Contacto</h2>
+                <ul>
+                    <li><a href="https://wa.me/59892236811" target="_blank" rel="noopener noreferrer">WhatsApp 092 236 811</a></li>
+                    <li><a href="mailto:consultas@fbinformaticauy.com">consultas@fbinformaticauy.com</a></li>
+                    <li><a href="mailto:ventas@fbinformaticauy.com">ventas@fbinformaticauy.com</a></li>
+                    <li><a href="https://instagram.com/fbinformaticauy" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> FB Informática. Todos los derechos reservados.</p>
+            <p>Uruguay</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/59892236811?text=Hola,%20estaba%20viendo%20tu%20web%20y%20quería%20hacerte%20una%20consulta%20general." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <!-- Botones flotantes -->
+    <a class="fab-whatsapp" href="https://wa.me/59892236811?text=Hola%2C%20estaba%20viendo%20tu%20web%20y%20quer%C3%ADa%20hacerte%20una%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Escribirnos por WhatsApp (se abre en una pestaña nueva)">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
     </a>
-    
-    <div class="to-top" onclick="window.scrollTo(0,0)">
-        <i class="fas fa-chevron-up"></i>
-    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Iniciar animaciones
-        AOS.init({ duration: 800, once: true });
+    <button class="fab-top" id="to-top" type="button" aria-label="Volver arriba">
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron-up"/></svg>
+    </button>
 
-        // Menú Móvil
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        if(mobileMenu){
-            mobileMenu.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
-
-        // LÓGICA BOTÓN "VOLVER ARRIBA"
-        const toTopBtn = document.querySelector('.to-top');
-        window.addEventListener('scroll', () => {
-            if(window.pageYOffset > 500) {
-                toTopBtn.classList.add('active');
-            } else {
-                toTopBtn.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
