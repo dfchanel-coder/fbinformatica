@@ -413,6 +413,8 @@ button, input, textarea { font: inherit; color: inherit; }
     gap: 1.25rem;
 }
 
+.cards + .cards { margin-top: 1.25rem; }
+
 .card {
     position: relative;
     display: flex;
@@ -934,7 +936,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 960px) {
+@media (max-width: 1040px) {
     .nav-toggle { display: inline-flex; }
 
     .nav-menu {
